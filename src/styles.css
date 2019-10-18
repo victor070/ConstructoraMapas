@@ -1,0 +1,62 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body{
+font-family: 'Times New Roman', Times, serif;
+padding: 0;
+margin: 0;
+
+}
+ 
+ #mainbarra .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  #mainbarra .barra-icon{
+      margin: 0 4px;
+      cursor: pointer;
+  }
+
+  #mainbarra .barra-avatar{
+      background-size: cover;
+      box-shadow: none;
+  }
+#tmenu {
+    cursor: pointer;
+    margin-right: 20px;
+}
+#sidenavconteiner {
+    margin-top: 65px;
+}
+#sidenav{
+    width: 240px;
+}
+#sidenav .mat-list-item-content{
+    padding: 0%;
+}
+
+#sidenav .menu-item{
+    width:  100%;
+    border-radius: 0;
+    text-align: left;
+    padding:  10px;
+}
+
+#sidenav .menu-item:hover{
+    background: beige;
+    
+}
+
+#sidenav .menu-item mat-icon{
+    margin-right: 20px;
+}
+
+#navbarra {
+    width:  50%;
+    text-align: center;
+    padding:  50px;
+}
+
+.agm-map {
+    height: 300px;
+  }

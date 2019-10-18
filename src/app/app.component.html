@@ -1,0 +1,51 @@
+
+<div *ngIf="!user">
+    <app-login></app-login>
+</div>
+
+
+<div *ngIf="user">
+        <mat-toolbar
+        *ngIf="user"
+        id="mainbarra"
+        color="primary">
+        sistema de denuncias 
+            <span class="example-spacer"></span>
+            
+            <nav class="nav nav-pills nav-justified">
+              
+                <a class="btn btn-primary btn-sm" routerLink="/caso-nuevo">Caso nuevo</a>
+                
+                <a class="btn btn-primary btn-sm" routerLink="/buscar">Buscar</a>
+
+                <a class="btn btn-primary btn-sm" routerLink="/emergencia">Emergencias</a>
+           </nav>
+        
+            <button
+            mat-mini-fab
+            [matMenuTriggerFor]="avatarDropDown"
+            class="barra-avatar"
+            color="primary"
+            [ngStyle]="{'background-image': 'url('+user?.photoURL +')'}"
+            >
+            </button>
+        </mat-toolbar>
+        
+          <mat-menu
+          #avatarDropDown="matMenu">
+            
+            <mat-card-subtitle>{{user?.displayName}}</mat-card-subtitle>
+            <mat-card-header>
+            <button
+            mat-icon-button
+            (click)="logout()">
+                salir
+               </button>
+            </mat-card-header>
+            </mat-menu>
+        
+        
+        <router-outlet></router-outlet>             
+    </div>
+
+ 

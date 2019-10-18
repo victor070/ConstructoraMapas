@@ -1,0 +1,20 @@
+
+<table class="table table-hover">
+        <thead>
+        <tr> 
+       <td> NOMBRE </td> 
+       <td> DIRECCIÓN </td>
+            </tr>
+        </thead>
+        <tbody>
+                        <tr *ngFor="let mapalista of mapaList">
+                        <td>{{mapalista.nombre}}</td>
+                        <td>{{mapalista.direc}}</td>
+                        <td>
+                              <a class="btn btn-primary " href="https://www.google.com/maps" target="_blank"> VAMOS </a>
+                        </td>
+                        </tr>
+                    </tbody>
+
+</table>
+<br> <br>

@@ -1,0 +1,36 @@
+
+<div>
+        <mat-toolbar
+                id="mainbarra"
+                color="primary">
+                SISTEMA DE DENUNCIAS  
+                    <span class="example-spacer"></span>
+                    
+                    <nav >
+                                <a class="btn btn-primary " routerLink="/mapa">mapa</a>
+                               
+                        
+                    </nav>
+
+
+                    <nav class="nav nav-pills nav-justified">
+                                
+                             
+                            <div class="form-group">
+                                <button 
+                                    mat-raised-button color="primary"
+                                   (click)="loginGoogle()"
+                                   >Inicio de sesión con Google
+                                   </button>        
+                                </div>
+                                
+                                
+                                                               
+        
+                   </nav>
+                
+                              
+        </mat-toolbar>
+         
+</div>
+<router-outlet></router-outlet> 
