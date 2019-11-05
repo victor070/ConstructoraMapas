@@ -3,119 +3,126 @@
 <form #nuevo="ngForm">      
 
 
-    <mat-accordion class="example-headers-align">
-        <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              FECHA
-            </mat-panel-title>
-            <mat-panel-description>
-              Ingrese el la siguiente infomación 
-              <mat-icon>alarm</mat-icon>
-            </mat-panel-description>
-          </mat-expansion-panel-header>
+  <mat-accordion class="example-headers-align">
+      <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            FECHA
+          </mat-panel-title>
+          <mat-panel-description>
+            INGRESE LOS SIGUIENTES DATOS  
+            <mat-icon>alarm</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
 
-    <div style="color: blue;">
-    <input type="hidden" name="$keyRegistro"  #$keyRegistro="ngModel" 
-    [(ngModel)]="casoNuevoService.selecCaso.$keyRegistro">  
-          
-   <label for="num_identificacion"><b>NUMERO DE IDENTIFICACIÓN*</b></label>
+  <div style="color: blue;">
+  <input type="hidden" name="$keyRegistro"  #$keyRegistro="ngModel" 
+  [(ngModel)]="casoNuevoService.selecCaso.$keyRegistro">  
+      
+  <label for="tipoCaso"><b>TIPO DE CASO*</b></label>
+  <input type="text" class="form-control" id="tipoCaso"  name="tipoCaso" #tipoCaso ="ngModel" 
+  [(ngModel)]="casoNuevoService.selecCaso.tipoCaso" placeholder="INGRESE EL TIPO DE CASO">
 
-    <input  class="form-control" id="num_identificacion"  name="num_identificacion" #num_identificacion ="ngModel" 
-    [(ngModel)]="casoNuevoService.selecCaso.num_identificacion" placeholder="INGRESE EL DPI">
+ <label for="num_identificacion"><b>NUMERO DE IDENTIFICACIÓN*</b></label>
 
-    <label for="tipoCaso"><b>TIPO DE CASO*</b></label>
-    <input type="text" class="form-control" id="tipoCaso"  name="tipoCaso" #tipoCaso ="ngModel" 
-    [(ngModel)]="casoNuevoService.selecCaso.tipoCaso" placeholder="INGRESE EL TIPO DE CASO">
-    </div>
-    <mat-action-row>
-        <button mat-button color="primary" (click)="nextStep()">Next</button>
-      </mat-action-row>
-    </mat-expansion-panel>
+  <input  class="form-control" id="num_identificacion"  name="num_identificacion" #num_identificacion ="ngModel" 
+  [(ngModel)]="casoNuevoService.selecCaso.num_identificacion" placeholder="INGRESE EL DPI">
+
+  
+  </div>
+  <mat-action-row>
+      <button mat-button color="primary" (click)="nextStep()"> SIGUIENTE </button>
+    </mat-action-row>
+  </mat-expansion-panel>
 <br>
- 
-    <mat-accordion class="example-headers-align">
-            <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                DATOS DE LA PERSONA
-                </mat-panel-title>
-                <mat-panel-description>
-                  Ingrese el la siguiente infomación 
-                  <mat-icon>account_circle</mat-icon>
-                </mat-panel-description>
-              </mat-expansion-panel-header>
-          
-            <div style="color: blue;">
-    <label for="nombreV"><b>NOMBRE*</b></label>
-    <input type="text" class="form-control" id="nombreV"  name="nombreV" #nombreV ="ngModel" 
-    [(ngModel)]="casoNuevoService.selecCaso.nombreV" placeholder="INGRESE LOS NOMBRES">
-    
-    <label for="apellidoV"><b>APELLIDO*</b></label>
-    <input type="text" class="form-control" id="apellidoV"  name="apellidoV" #apellidoV ="ngModel" 
-    [(ngModel)]="casoNuevoService.selecCaso.apellidoV" placeholder="INGRESE LOS APELLIDOS ">
-    
-    <label for="edadV"><b>EDAD*</b></label>
-    <input  class="form-control" id="edadV"  name="edadV" #edadV ="ngModel" 
-    [(ngModel)]="casoNuevoService.selecCaso.edadV" placeholder="INGRESE LA EDAD ">
-    
-    <label for="generoV"><b>GENERO*</b></label>
-    <input type="text" class="form-control" id="generoV"  name="generoV" #generoV ="ngModel" 
-    [(ngModel)]="casoNuevoService.selecCaso.generoV" placeholder="INGRESE EL GENERO ">
-    
-    <label for="idiomaV"><b>IDIOMA*</b></label>
-    <input type="text" class="form-control" id="idiomaV"  name="idiomaV" #idiomaV ="ngModel" 
-    [(ngModel)]="casoNuevoService.selecCaso.idiomaV" placeholder="INGRESE EL IDIOMA MATERNO ">
+
+  <mat-accordion class="example-headers-align">
+          <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+              DATOS DE LA PERSONA
+              </mat-panel-title>
+              <mat-panel-description>
+                INGRESE LOS SIGUIENTES DATOS  
+                <mat-icon>account_circle</mat-icon>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
         
-    <label for="estadoCivilV"><b>ESTADO CIVIL*</b></label>
-    <input type="text" class="form-control" id="estadoCivilV"  name="estadoCivilV" #estadoCivilV ="ngModel" 
-    [(ngModel)]="casoNuevoService.selecCaso.estadoCivilV" placeholder="INGRESE EL ESTADO CIVIL ">
-    
-    <label for="telefonoV"><b>TELEFONO DE CASA O OFICINA*</b></label>
-    <input  class="form-control" id="telefonoV"  name="telefonoV" #telefonoV ="ngModel" 
-    [(ngModel)]="casoNuevoService.selecCaso.telefonoV" placeholder="INGRESE EL TELEFONO ">
-       
-    <label for="celularV"><b>TELEFONO DE CELULAR U OTRO*</b></label>
-    <input  class="form-control" id="celularV"  name="celularV" #celularV ="ngModel" 
-    [(ngModel)]="casoNuevoService.selecCaso.celularV" placeholder="INGRESE EL CELULAR ">
+          <div style="color: blue;">
+  <label for="nombreV"><b>NOMBRE*</b></label>
+  <input type="text" class="form-control" id="nombreV"  name="nombreV" #nombreV ="ngModel" 
+  [(ngModel)]="casoNuevoService.selecCaso.nombreV" placeholder="INGRESE LOS NOMBRES">
+  
+  <label for="apellidoV"><b>APELLIDO*</b></label>
+  <input type="text" class="form-control" id="apellidoV"  name="apellidoV" #apellidoV ="ngModel" 
+  [(ngModel)]="casoNuevoService.selecCaso.apellidoV" placeholder="INGRESE LOS APELLIDOS ">
+  
+  <label for="edadV"><b>EDAD*</b></label>
+  <input  class="form-control" id="edadV"  name="edadV" #edadV ="ngModel" 
+  [(ngModel)]="casoNuevoService.selecCaso.edadV" placeholder="INGRESE LA EDAD ">
+  
+  <label for="generoV"><b>GENERO*</b></label>
+  <input type="text" class="form-control" id="generoV"  name="generoV" #generoV ="ngModel" 
+  [(ngModel)]="casoNuevoService.selecCaso.generoV" placeholder="INGRESE EL GENERO ">
+  
+  <label for="idiomaV"><b>IDIOMA*</b></label>
+  <input type="text" class="form-control" id="idiomaV"  name="idiomaV" #idiomaV ="ngModel" 
+  [(ngModel)]="casoNuevoService.selecCaso.idiomaV" placeholder="INGRESE EL IDIOMA MATERNO ">
+      
+  <label for="estadoCivilV"><b>ESTADO CIVIL*</b></label>
+  <input type="text" class="form-control" id="estadoCivilV"  name="estadoCivilV" #estadoCivilV ="ngModel" 
+  [(ngModel)]="casoNuevoService.selecCaso.estadoCivilV" placeholder="INGRESE EL ESTADO CIVIL ">
+  
+  <label for="telefonoV"><b>TELÉFONO DE CASA O OFICINA*</b></label>
+  <input  class="form-control" id="telefonoV"  name="telefonoV" #telefonoV ="ngModel" 
+  [(ngModel)]="casoNuevoService.selecCaso.telefonoV" placeholder="INGRESE EL TELÉFONO ">
+     
+  <label for="celularV"><b>TELÉFONO DE CELULAR U OTRO*</b></label>
+  <input  class="form-control" id="celularV"  name="celularV" #celularV ="ngModel" 
+  [(ngModel)]="casoNuevoService.selecCaso.celularV" placeholder="INGRESE EL CELULAR ">
 
-    <label for="ocupacionV"><b>OCUPACION*</b></label>
-    <input  class="form-control" id="ocupacionV"  name="ocupacionV" #ocupacionV ="ngModel" 
-    [(ngModel)]="casoNuevoService.selecCaso.ocupacionV" placeholder="INGRESE LA OCUPACION ">
-    
-    <label for="escolaridadV"><b>ESCOLARIDAD*</b></label>
-    <input  class="form-control" id="escolaridadV"  name="escolaridadV" #escolaridadV ="ngModel" 
-    [(ngModel)]="casoNuevoService.selecCaso.escolaridadV" placeholder="INGRESE EL ULTIMO GRADO CURSADO">
+  <label for="ocupacionV"><b>OCUPACIÓN*</b></label>
+  <input  class="form-control" id="ocupacionV"  name="ocupacionV" #ocupacionV ="ngModel" 
+  [(ngModel)]="casoNuevoService.selecCaso.ocupacionV" placeholder="INGRESE LA OCUPACION ">
+  
+  <label for="escolaridadV"><b>ESCOLARIDAD*</b></label>
+  <input  class="form-control" id="escolaridadV"  name="escolaridadV" #escolaridadV ="ngModel" 
+  [(ngModel)]="casoNuevoService.selecCaso.escolaridadV" placeholder="INGRESE EL ULTIMO GRADO CURSADO">
 
-    <label for="domicilioV"><b>DOMICILIO/DIRECCION*</b></label>
-    <input type="text" class="form-control" id="domicilioV"  name="domicilioV" #domicilioV ="ngModel" 
-    [(ngModel)]="casoNuevoService.selecCaso.domicilioV" placeholder="INGRESE EL DOMICILIO ">
+  <label for="domicilioV"><b>DOMICILIO/DIRECCION*</b></label>
+  <input type="text" class="form-control" id="domicilioV"  name="domicilioV" #domicilioV ="ngModel" 
+  [(ngModel)]="casoNuevoService.selecCaso.domicilioV" placeholder="INGRESE EL DOMICILIO ">
 
-    <label for="lTrabajoV"><b>LUGAR DE TRABAJO*</b></label>
-    <input type="text" class="form-control" id="lTrabajoV"  name="lTrabajoV" #lTrabajoV ="ngModel" 
-    [(ngModel)]="casoNuevoService.selecCaso.lTrabajoV" placeholder="INGRESE EL LUGAR DE TRABAJO">
-            </div>
-    <mat-action-row>
-            <button mat-button color="warn" (click)="prevStep()">Previous</button>
-        <button mat-button color="primary" (click)="nextStep()">Next</button>
-      </mat-action-row>
-    </mat-expansion-panel>
+  <label for="lTrabajoV"><b>LUGAR DE TRABAJO*</b></label>
+  <input type="text" class="form-control" id="lTrabajoV"  name="lTrabajoV" #lTrabajoV ="ngModel" 
+  [(ngModel)]="casoNuevoService.selecCaso.lTrabajoV" placeholder="INGRESE EL LUGAR DE TRABAJO">
+          </div>
+  <mat-action-row>
+          <button mat-button color="warn" (click)="prevStep()"> ANTERIOR </button>
+      <button mat-button color="primary" (click)="nextStep()"> SIGUIENTE </button>
+    </mat-action-row>
+  </mat-expansion-panel>
 </mat-accordion>
 <br>
 
 <mat-accordion class="example-headers-align">
-    <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-        DATOS DE LA CONTRAPARTE
-        </mat-panel-title>
-        <mat-panel-description>
-          Ingrese el la infomación de la contraparte 
-          <mat-icon>account_circle</mat-icon>
-        </mat-panel-description>
-      </mat-expansion-panel-header>
+  <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+      DATOS DE LA CONTRAPARTE
+      </mat-panel-title>
+      <mat-panel-description>
+        INGRESE LOS DATOS DE LA CONTRAPARTE 
+        <mat-icon>account_circle</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
 
-      <div style="color: blue;">
+    <div style="color: blue;">
+
+<label for="dpiC"><b>DPI*</b></label>
+<input  class="form-control" id="dpiC"  name="dpiC" #dpiC ="ngModel" 
+[(ngModel)]="casoNuevoService.selecCaso.dpiC" placeholder="INGRESE EL DPI ">
+      
 
 <label for="nombreC"><b>NOMBRE*</b></label>
 <input  class="form-control" id="nombreC"  name="nombreC" #nombreC ="ngModel" 
@@ -132,7 +139,7 @@
 <label for="edadC"><b>EDAD*</b></label>
 <input  class="form-control" id="edadC"  name="edadC" #edadC ="ngModel" 
 [(ngModel)]="casoNuevoService.selecCaso.edadC" placeholder="INGRESE LA EDAD ">
-    
+  
 <label for="idiomaC"><b>IDIOMA*</b></label>
 <input  class="form-control" id="idiomaC"  name="idiomaC" #idiomaC ="ngModel" 
 [(ngModel)]="casoNuevoService.selecCaso.idiomaC" placeholder="INGRESE EL IDIOMA MATERNO">
@@ -141,55 +148,55 @@
 <input  class="form-control" id="estadoCivilC"  name="estadoCivilC" #estadoCivilC ="ngModel" 
 [(ngModel)]="casoNuevoService.selecCaso.estadoCivilC" placeholder="INGRESE EL ESTADO CIVIL">
 
-<label for="telefonoC"><b>TELEFONO DE CASA/OFICINA*</b></label>
+<label for="telefonoC"><b>TELÉFONO DE CASA/OFICINA*</b></label>
 <input  class="form-control" id="telefonoC"  name="telefonoC" #telefonoC ="ngModel" 
-[(ngModel)]="casoNuevoService.selecCaso.telefonoC" placeholder="INGRESE EL TELEFONO">
-   
-<label for="celularC"><b>TELEFONO DE CELULAR/OTRO*</b></label>
+[(ngModel)]="casoNuevoService.selecCaso.telefonoC" placeholder="INGRESE EL TELÉFONO">
+ 
+<label for="celularC"><b>TELÉFONO DE CELULAR/OTRO*</b></label>
 <input  class="form-control" id="celularC"  name="celularC" #celularC ="ngModel" 
 [(ngModel)]="casoNuevoService.selecCaso.celularC" placeholder="INGRESE EL CELULAR ">
 
-<label for="ocupacionC"><b>OCUPACION*</b></label>
+<label for="ocupacionC"><b>OCUPACIÓN*</b></label>
 <input  class="form-control" id="ocupacionC"  name="ocupacionC" #ocupacionC ="ngModel" 
-[(ngModel)]="casoNuevoService.selecCaso.ocupacionC" placeholder="INGRESE LA OCUPACION ">
-    
+[(ngModel)]="casoNuevoService.selecCaso.ocupacionC" placeholder="INGRESE LA OCUPACIÓN ">
+  
 <label for="escolaridadC"><b>ESCOLARIDAD*</b></label>
 <input  class="form-control" id="escolaridadC"  name="escolaridadC" #escolaridadC ="ngModel" 
 [(ngModel)]="casoNuevoService.selecCaso.escolaridadC" placeholder="INGRESE EL ULTIMO GRADO CURSADO">
 
-<label for="domicilioC"><b>DOMICILIO O DIRECCION*</b></label>
+<label for="domicilioC"><b>DOMICILIO O DIRECCIÓN*</b></label>
 <input  class="form-control" id="domicilioC"  name="domicilioC" #domicilioC ="ngModel" 
 [(ngModel)]="casoNuevoService.selecCaso.domicilioC" placeholder="INGRESE EL DOMICILIO ">
- 
+
 <label for="lTrabajoC"><b>LUGAR DE TRABAJO*</b></label>
 <input  class="form-control" id="lTrabajoC"  name="lTrabajoC" #lTrabajoC ="ngModel" 
 [(ngModel)]="casoNuevoService.selecCaso.lTrabajoC" placeholder="INGRESE EL LUGAR DE TRABAJO">
 
-      </div>
+    </div>
 
 
-      <mat-action-row>
-            <button mat-button color="warn" (click)="prevStep()">Previous</button>
-        <button mat-button color="primary" (click)="nextStep()">Next</button>
-      </mat-action-row>
-    </mat-expansion-panel>
+    <mat-action-row>
+          <button mat-button color="warn" (click)="prevStep()">ANTERIOR</button>
+      <button mat-button color="primary" (click)="nextStep()">SIGUIENTE</button>
+    </mat-action-row>
+  </mat-expansion-panel>
 </mat-accordion>
 <br>
 
 <mat-accordion class="example-headers-align">
-    <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" hideToggle>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Diagnostico
-        </mat-panel-title>
-        <mat-panel-description>
-          Ingrese el diagnostico 
-          <mat-icon>alarm</mat-icon>
-        </mat-panel-description>
-      </mat-expansion-panel-header>
+  <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        DIAGNÓSTICO
+      </mat-panel-title>
+      <mat-panel-description>
+        INGRESE EL DIAGNÓSTICO 
+        <mat-icon>alarm</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
 <div style="color: blue;">
 
-<label for="descripcion"><b>DESCRIPCION DE LA SITUACION*</b></label>
+<label for="descripcion"><b>DESCRIPCIÓN DE LA SITUACIÓN*</b></label>
 <input  class="form-control" id="descripcion"  name="descripcion" #descripcion ="ngModel" 
 [(ngModel)]="casoNuevoService.selecCaso.descripcion" placeholder="INGRESE UNA DESCRIPCION DEL CASO">
 
@@ -208,9 +215,9 @@
 </div>
 
 <mat-action-row>
-    <button mat-button color="warn" (click)="prevStep()">Previous</button>
-    <button mat-button color="primary" (click)="nextStep()">End</button>
-  </mat-action-row>
+  <button mat-button color="warn" (click)="prevStep()">ANTERIOR</button>
+  <button mat-button color="primary" (click)="nextStep()"> FIN </button>
+</mat-action-row>
 </mat-expansion-panel>
 </mat-accordion>
 <br>
@@ -218,11 +225,12 @@
 
 
 <div class="text-center">
-  <div class="btn-group btn-group-sm text-center">
-      <button class="btn btn-outline-primary form-control" type="submit" (click)="onSumit(nuevo)">
-        <i class="fas fa-plus-circle"></i>   agregar | modificar
-      </button>
-  </div>
+<div class="btn-group btn-group-sm text-center">
+    <button class="btn btn-outline-primary form-control" type="submit" (click)="onSumit(nuevo)">
+      <i class="fas fa-plus-circle"></i>   AGREGAR | MODIFICAR
+    </button>
+    <button type="button" (click)="onPrint(casolista)" class="btn btn-outline-danger btn-sm" routerLink="/imprimir"> IMPRIMIR  </button>
+</div>
 </div>
 
 </mat-accordion>
@@ -238,37 +246,37 @@
 
 
 <!--div class="coneitiner-fluid">
-        <div style="color: blue;">
-            <h1>{{titulo}}</h1>
-        </div>
-        
-        <div style="width: 300px;"> 
-        
-            <form (ngSubmit)="onSumit()" >
-                
-                <div class="form-group">
-                    
-                    <label for="item">Item</label>
+      <div style="color: blue;">
+          <h1>{{titulo}}</h1>
+      </div>
+      
+      <div style="width: 300px;"> 
+      
+          <form (ngSubmit)="onSumit()" >
+              
+              <div class="form-group">
+                  
+                  <label for="item">Item</label>
+                 <input type="text" class="form-control"
+                 placeholder="Ingresar item" id="item"
+                 required [(ngModel)]="itemValue" name="item">
+              </div>
+
+              <div class="form-group">
+                      <h4 style="color: blue;"> ingrese número de caso</h4>
+      
+                  <label for="caso"> numero de caso </label>
                    <input type="text" class="form-control"
-                   placeholder="Ingresar item" id="item"
-                   required [(ngModel)]="itemValue" name="item">
-                </div>
+                   placeholder="Ingresar numero de caso" id="caso"
+                      required [(ngModel)]="casoValue" name="caso">
 
-                <div class="form-group">
-                        <h4 style="color: blue;"> ingrese número de caso</h4>
-        
-                    <label for="caso"> numero de caso </label>
-                     <input type="text" class="form-control"
-                     placeholder="Ingresar numero de caso" id="caso"
-                        required [(ngModel)]="casoValue" name="caso">
-
-                        
-               </div>
-                                         
-                <div class="btn-group">
-                     <button type="submit" class="btn btn-success">Guardar</button>
-                </div>
-            </form>
-        </div>
-    
-        </div-->
+                      
+             </div>
+                                       
+              <div class="btn-group">
+                   <button type="submit" class="btn btn-success">Guardar</button>
+              </div>
+          </form>
+      </div>
+  
+      </div-->

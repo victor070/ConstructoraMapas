@@ -9,18 +9,20 @@
         *ngIf="user"
         id="mainbarra"
         color="primary">
-        sistema de denuncias 
+        SISTEMA DE DENUNCIAS 
             <span class="example-spacer"></span>
             
+            
             <nav class="nav nav-pills nav-justified">
-              
-                <a class="btn btn-primary btn-sm" routerLink="/caso-nuevo">Caso nuevo</a>
+                    <div class=" btn-group-sm btn-group-toggle" data-toggle="buttons">  
+                <a class="btn btn-primary btn-sm" routerLink="/caso-nuevo">CASO NUEVO</a>
                 
-                <a class="btn btn-primary btn-sm" routerLink="/buscar">Buscar</a>
+                <a class="btn btn-primary btn-sm" routerLink="/buscar">BUSCAR</a>
 
-                <a class="btn btn-primary btn-sm" routerLink="/emergencia">Emergencias</a>
+                <a class="btn btn-primary btn-sm" routerLink="/emergencia">EMERGENCIAS</a>
+                </div>
            </nav>
-        
+            
             <button
             mat-mini-fab
             [matMenuTriggerFor]="avatarDropDown"
@@ -39,7 +41,7 @@
             <button
             mat-icon-button
             (click)="logout()">
-                salir
+                SALIR
                </button>
             </mat-card-header>
             </mat-menu>

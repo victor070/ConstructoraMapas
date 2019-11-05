@@ -1,28 +1,32 @@
 
 <div class="btn-group">
-<input type="text" class="form-control" id="buscar"  [(ngModel)]="buscar" >
-<button class="btn btn-primary" (click)='buscarCaso()'> Consultar </button>
-</div>
-
-    <table class="table table-hover">
-        <thead>
-        <tr>
-        <td>DPI</td>
-        <td>TIPO CASO</td>
-        <td>NOMBRE</td>
-        <td>    </td>
-        <td> COMPLEMENTOS </td>
-        </tr> 
-    </thead>
-    <tbody>
-        <tr *ngFor="let casolista of casoList">
-        <td>{{casolista.num_identificacion}}</td>
-        <td>{{casolista.tipoCaso}}</td>
-        <td>{{casolista.nombreV}}</td>
-        
-        <td> </td> 
-        <td> <button type="button" (click)="onEdit(casolista)" class="btn btn-outline-danger btn-sm" routerLink="/caso-nuevo"> EDIT  </button></td>
-        </tr>
-    </tbody>
-    </table>
- 
+    <input type="text" class="form-control" id="buscar"  [(ngModel)]="buscar" >
+    <button class="btn btn-primary" (click)='buscarCaso()'> BUSRCAR </button>
+    </div>
+    
+        <table class="table table-hover">
+            <thead>
+            <tr>
+            <td>DPI</td>
+            <td>TIPO CASO</td>
+            <td>NOMBRE</td>
+            <td>APELLIDO</td>
+            <td>    </td>
+            <td> COMPLEMENTOS </td>
+            </tr> 
+        </thead>
+        <tbody>
+            <tr *ngFor="let casolista of casoList">
+            <td>{{casolista.num_identificacion}}</td>
+            <td>{{casolista.tipoCaso}}</td>
+            <td>{{casolista.nombreV}}</td>
+            <td>{{casolista.apellidoV}}</td>
+            
+            <td> </td> 
+            <td> <button type="button" (click)="onEdit(casolista)" class="btn btn-outline-danger btn-sm" routerLink="/caso-nuevo"> EDITAR </button>
+                
+            </td>
+            </tr>
+        </tbody>
+        </table>
+     

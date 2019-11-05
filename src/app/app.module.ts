@@ -19,6 +19,7 @@ import { BuscarComponent } from './componentes/buscar/buscar.component';
 import { CasoNuevoComponent } from './componentes/caso-nuevo/caso-nuevo.component';
 import { MapaComponent } from './componentes/mapa/mapa.component';
 import { LlamadaComponent } from './componentes/llamada/llamada.component';
+import { ImprimirComponent } from './componentes/imprimir/imprimir.component';
 
 
 
@@ -30,6 +31,7 @@ import { LlamadaComponent } from './componentes/llamada/llamada.component';
     CasoNuevoComponent,
     MapaComponent,
     LlamadaComponent,
+    ImprimirComponent,
     
   
     
