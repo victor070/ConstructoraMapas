@@ -64,12 +64,12 @@ export class CasoNuevoService {
 actualizar(casonuevo : Caso){
 this.CasoNuevoList.update(casonuevo.$keyRegistro,{
     
-    tipoCaso: casonuevo.tipoCaso,
-    
+        
     descripcion: casonuevo.descripcion,
     diagnostico: casonuevo.diagnostico,
     acciones: casonuevo.acciones,
-    estatus: casonuevo.estatus
+    estatus: casonuevo.estatus,
+    ob:casonuevo.ob
 
     
 });

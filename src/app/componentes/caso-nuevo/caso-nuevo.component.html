@@ -25,8 +25,8 @@
 
  <label for="num_identificacion"><b>NUMERO DE IDENTIFICACIÓN*</b></label>
 
-  <input  class="form-control" id="num_identificacion"  name="num_identificacion" #num_identificacion ="ngModel" 
-  [(ngModel)]="casoNuevoService.selecCaso.num_identificacion" placeholder="INGRESE EL DPI">
+  <input  type="number"  min="1111111110101" max="9999999999999" step="123456249"   class="form-control" id="num_identificacion"  name="num_identificacion" #num_identificacion ="ngModel" 
+  [(ngModel)]="casoNuevoService.selecCaso.num_identificacion" placeholder="INGRESE EL DPI" >
 
   
   </div>
@@ -74,11 +74,11 @@
   [(ngModel)]="casoNuevoService.selecCaso.estadoCivilV" placeholder="INGRESE EL ESTADO CIVIL ">
   
   <label for="telefonoV"><b>TELÉFONO DE CASA O OFICINA*</b></label>
-  <input  class="form-control" id="telefonoV"  name="telefonoV" #telefonoV ="ngModel" 
+  <input  type="tel" pattern="[0-9]{9}" class="form-control" id="telefonoV"  name="telefonoV" #telefonoV ="ngModel" 
   [(ngModel)]="casoNuevoService.selecCaso.telefonoV" placeholder="INGRESE EL TELÉFONO ">
      
   <label for="celularV"><b>TELÉFONO DE CELULAR U OTRO*</b></label>
-  <input  class="form-control" id="celularV"  name="celularV" #celularV ="ngModel" 
+  <input type="tel" pattern="[0-9]{9}" class="form-control" id="celularV"  name="celularV" #celularV ="ngModel" 
   [(ngModel)]="casoNuevoService.selecCaso.celularV" placeholder="INGRESE EL CELULAR ">
 
   <label for="ocupacionV"><b>OCUPACIÓN*</b></label>
@@ -120,7 +120,7 @@
     <div style="color: blue;">
 
 <label for="dpiC"><b>DPI*</b></label>
-<input  class="form-control" id="dpiC"  name="dpiC" #dpiC ="ngModel" 
+<input  type="number"  min="1111111110101" max="9999999999999" step="50"  class="form-control" id="dpiC"  name="dpiC" #dpiC ="ngModel" 
 [(ngModel)]="casoNuevoService.selecCaso.dpiC" placeholder="INGRESE EL DPI ">
       
 
@@ -149,11 +149,11 @@
 [(ngModel)]="casoNuevoService.selecCaso.estadoCivilC" placeholder="INGRESE EL ESTADO CIVIL">
 
 <label for="telefonoC"><b>TELÉFONO DE CASA/OFICINA*</b></label>
-<input  class="form-control" id="telefonoC"  name="telefonoC" #telefonoC ="ngModel" 
+<input type="tel" pattern="[0-9]{9}"  class="form-control" id="telefonoC"  name="telefonoC" #telefonoC ="ngModel" 
 [(ngModel)]="casoNuevoService.selecCaso.telefonoC" placeholder="INGRESE EL TELÉFONO">
  
 <label for="celularC"><b>TELÉFONO DE CELULAR/OTRO*</b></label>
-<input  class="form-control" id="celularC"  name="celularC" #celularC ="ngModel" 
+<input  type="tel" pattern="[0-9]{9}" class="form-control" id="celularC"  name="celularC" #celularC ="ngModel" 
 [(ngModel)]="casoNuevoService.selecCaso.celularC" placeholder="INGRESE EL CELULAR ">
 
 <label for="ocupacionC"><b>OCUPACIÓN*</b></label>
@@ -205,13 +205,33 @@
 <input  class="form-control" id="diagnostico"  name="diagnostico" #diagnostico ="ngModel" 
 [(ngModel)]="casoNuevoService.selecCaso.diagnostico" placeholder="INGRESE UN DIAGNOSTICO  DEL CASO">
 
+<label for="exampleInputFile"><b>Subir archivo*</b></label>
+    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+    <small id="fileHelp" class="form-text text-muted">AGREGAR PRUEBAS DEL CASO </small>
+  
+
 <label for="acciones"><b>ACCIONES*</b></label>
 <input  class="form-control" id="acciones"  name="acciones" #acciones ="ngModel" 
 [(ngModel)]="casoNuevoService.selecCaso.acciones" placeholder="INGRESE LAS ACCIONES  DEL CASO">
 
+
 <label for="estatus"><b>ESTATUS*</b></label>
-<input  class="form-control" id="estatus"  name="estatus" #aestatus ="ngModel" 
-[(ngModel)]="casoNuevoService.selecCaso.estatus" placeholder="INGRESE EL ESTADO DEL CASO">
+    <select class="form-control" id="estatus"  name="estatus" #estatus ="ngModel" 
+    [(ngModel)]="casoNuevoService.selecCaso.estatus" placeholder="SELECCIONE EL ESTADO DEL CASO">
+      <option>ACTIVO CON SEGUIMIENTO</option>
+      <option>ACTIVO</option>
+      <option>RETENIDO</option>
+      <option>ENVIADO </option>
+      <option>DESACTIVADO</option>
+    </select>
+
+    <label for="estatus"><b>ESTATUS*</b></label>
+    <input  class="form-control" id="estatus"  name="estatus" #estatus ="ngModel" 
+    [(ngModel)]="casoNuevoService.selecCaso.estatus" >
+
+<label for="ob"><b>OBSERVACIÓNES*</b></label>
+<input  class="form-control" id="ob"  name="ob" #ob ="ngModel" 
+[(ngModel)]="casoNuevoService.selecCaso.ob" placeholder="OBSERVACIÓNES">
 </div>
 
 <mat-action-row>
@@ -224,59 +244,21 @@
 
 
 
-<div class="text-center">
-<div class="btn-group btn-group-sm text-center">
-    <button class="btn btn-outline-primary form-control" type="submit" (click)="onSumit(nuevo)">
-      <i class="fas fa-plus-circle"></i>   AGREGAR | MODIFICAR
-    </button>
-    <button type="button" (click)="onPrint(casolista)" class="btn btn-outline-danger btn-sm" routerLink="/imprimir"> IMPRIMIR  </button>
-</div>
-</div>
+
 
 </mat-accordion>
 
-
+<div class="text-center">
+  <div class="btn-group btn-group-sm text-center">
+      <button  type="submit"  class="btn btn-outline-primary form-control"  (click)="onSumit(nuevo)">
+        <i class="fas fa-plus-circle"></i>   AGREGAR | MODIFICAR
+      </button>
+      <button type="button" (click)="onPrint(casolista)" class="btn btn-outline-danger btn-sm" routerLink="/imprimir"> IMPRIMIR  </button>
+  </div>
+  </div>
 
 </form>
 
 
 
 
-
-
-
-<!--div class="coneitiner-fluid">
-      <div style="color: blue;">
-          <h1>{{titulo}}</h1>
-      </div>
-      
-      <div style="width: 300px;"> 
-      
-          <form (ngSubmit)="onSumit()" >
-              
-              <div class="form-group">
-                  
-                  <label for="item">Item</label>
-                 <input type="text" class="form-control"
-                 placeholder="Ingresar item" id="item"
-                 required [(ngModel)]="itemValue" name="item">
-              </div>
-
-              <div class="form-group">
-                      <h4 style="color: blue;"> ingrese número de caso</h4>
-      
-                  <label for="caso"> numero de caso </label>
-                   <input type="text" class="form-control"
-                   placeholder="Ingresar numero de caso" id="caso"
-                      required [(ngModel)]="casoValue" name="caso">
-
-                      
-             </div>
-                                       
-              <div class="btn-group">
-                   <button type="submit" class="btn btn-success">Guardar</button>
-              </div>
-          </form>
-      </div>
-  
-      </div-->

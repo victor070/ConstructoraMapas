@@ -1,7 +1,7 @@
 
 export class Caso {
     $keyRegistro: any;
-    num_identificacion: string;
+    num_identificacion: number;
     tipoCaso:string;
 
     nombreV:string;
@@ -16,7 +16,8 @@ export class Caso {
     escolaridadV:string;
     domicilioV:string;
     lTrabajoV:string;
-  
+
+    dpiC:number;
     nombreC:string;
     apellidoC:string;
     edadC:number;
@@ -34,4 +35,5 @@ export class Caso {
     diagnostico:string;
     acciones:string;
     estatus:string;
+    ob:string;
 }
