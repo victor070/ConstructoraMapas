@@ -4,7 +4,7 @@
 
     <div style="color:black">
 
-        <h3>DiRECCIÓN MUNICIPAL DE LA MUJER DE QUETZALTENANGO</h3>
+        <h3>DIRECCIÓN MUNICIPAL DE LA MUJER DE QUETZALTENANGO</h3>
       
         <h3>TIPO DE CASO</h3>  
           <input type="hidden" name="$keyRegistro"  #$keyRegistro="ngModel" 
@@ -140,6 +140,14 @@
       <label for="estatus"><b>ESTATUS*</b></label>
       <input  class="form-control" id="estatus"  name="estatus" #aestatus ="ngModel" 
       [(ngModel)]="casoNuevoService.selecCaso.estatus" >
+
+      <label for="ob"><b>OBSERVACIÓNES*</b></label>
+      <input  class="form-control" id="ob"  name="ob" #ob ="ngModel" 
+      [(ngModel)]="casoNuevoService.selecCaso.ob" placeholder="OBSERVACIÓNES">
+      
+
+
+      </div>
       </div>
       <br>
       <div>
