@@ -3,6 +3,7 @@ import { Caso } from "../caso-nuevo"
 import { CasoNuevoService } from "../caso-nuevo.service";
 import Swal from "sweetalert2"; 
 import { NgForm } from '@angular/forms';
+import {  AngularFireStorageModule } from "@angular/fire/storage";
 
 @Component({
   selector: 'app-caso-nuevo',
@@ -27,7 +28,7 @@ export class CasoNuevoComponent  {
   casoList:Caso[];
 
 
-constructor(public casoNuevoService: CasoNuevoService ){
+constructor(public casoNuevoService: CasoNuevoService, public Storage: AngularFireStorageModule ){
  }
 
  onSumit(nuevo: NgForm ){
@@ -49,13 +50,21 @@ constructor(public casoNuevoService: CasoNuevoService ){
     console.log("Actulizando");
        Swal.fire({
       position:'top-end',
-      type:"error",
+      type:"success",
       title:'Modificado con exito!',
       showConfirmButton:true,
       timer: 1500
     })
   }  
   
+ }
+
+ onUpload( e ){
+   console.log('subir', e.target.files[0]);
+   const id = Math.random().toString(36).substring(2);
+   const file = e.target.files[0];
+   const filePath ='upload/imagen.png'; 
+      
  }
 
 }

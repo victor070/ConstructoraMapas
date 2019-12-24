@@ -9,6 +9,7 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFireDatabaseModule}from'@angular/fire/database/';
+import {AngularFireStorageModule} from "@angular/fire/storage";
 
 import { AppRoutingModule, } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -44,6 +45,7 @@ import { ImprimirComponent } from './componentes/imprimir/imprimir.component';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
+    AngularFireStorageModule,
     MaterialModule,
     AngularFireDatabaseModule,
     ReactiveFormsModule,

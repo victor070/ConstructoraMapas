@@ -58,20 +58,31 @@
   [(ngModel)]="casoNuevoService.selecCaso.apellidoV" placeholder="INGRESE LOS APELLIDOS ">
   
   <label for="edadV"><b>EDAD*</b></label>
-  <input  class="form-control" id="edadV"  name="edadV" #edadV ="ngModel" 
-  [(ngModel)]="casoNuevoService.selecCaso.edadV" placeholder="INGRESE LA EDAD ">
+  <input  type="number"  min="10" max="99" step="2"  class="form-control" id="edadV"  name="edadV" #edadV ="ngModel" 
+  [(ngModel)]="casoNuevoService.selecCaso.edadV" >
   
-  <label for="generoV"><b>GENERO*</b></label>
-  <input type="text" class="form-control" id="generoV"  name="generoV" #generoV ="ngModel" 
-  [(ngModel)]="casoNuevoService.selecCaso.generoV" placeholder="INGRESE EL GENERO ">
+<label for="generoC"><b>GENERO*</b></label>      
+<select class="form-control" id="generoV"  name="generoV" #generoV ="ngModel" 
+[(ngModel)]="casoNuevoService.selecCaso.generoV" placeholder="INGRESE EL GENERO ">
+  <option>MASCULINO</option>
+  <option>FEMENINO</option>
+</select>
   
   <label for="idiomaV"><b>IDIOMA*</b></label>
   <input type="text" class="form-control" id="idiomaV"  name="idiomaV" #idiomaV ="ngModel" 
   [(ngModel)]="casoNuevoService.selecCaso.idiomaV" placeholder="INGRESE EL IDIOMA MATERNO ">
       
-  <label for="estadoCivilV"><b>ESTADO CIVIL*</b></label>
-  <input type="text" class="form-control" id="estadoCivilV"  name="estadoCivilV" #estadoCivilV ="ngModel" 
-  [(ngModel)]="casoNuevoService.selecCaso.estadoCivilV" placeholder="INGRESE EL ESTADO CIVIL ">
+    
+<label for="estadoCivilC"><b>ESTADO CIVIL*</b></label>
+<select class="form-control" id="estadoCivilV"  name="estadoCivilV" #estadoCivilV ="ngModel" 
+[(ngModel)]="casoNuevoService.selecCaso.estadoCivilV" placeholder="INGRESE EL ESTADO CIVIL ">
+  <option>SOLTER@</option>
+  <option>CASAD@</option>
+  <option>DIVORCIOAD@</option>
+  <option>SEPARAD@</option>
+  <option>VIUD@</option>
+</select>
+
   
   <label for="telefonoV"><b>TELÉFONO DE CASA O OFICINA*</b></label>
   <input  type="tel" pattern="[0-9]{9}" class="form-control" id="telefonoV"  name="telefonoV" #telefonoV ="ngModel" 
@@ -132,12 +143,15 @@
 <input  class="form-control" id="apellidoC"  name="apellidoC" #apellidoC ="ngModel" 
 [(ngModel)]="casoNuevoService.selecCaso.apellidoC" placeholder="INGRESE LOS APELLIDOS">
 
-<label for="generoC"><b>GENERO*</b></label>
-<input  class="form-control" id="generoC"  name="generoC" #generoC ="ngModel" 
+<label for="generoC"><b>GENERO*</b></label>      
+<select class="form-control" id="generoC"  name="generoC" #generoC ="ngModel" 
 [(ngModel)]="casoNuevoService.selecCaso.generoC" placeholder="INGRESE EL GENERO">
+  <option>MASCULINO</option>
+  <option>FEMENINO</option>
+</select>
 
 <label for="edadC"><b>EDAD*</b></label>
-<input  class="form-control" id="edadC"  name="edadC" #edadC ="ngModel" 
+<input  type="number"  min="10" max="99" step="2" class="form-control" id="edadC"  name="edadC" #edadC ="ngModel" 
 [(ngModel)]="casoNuevoService.selecCaso.edadC" placeholder="INGRESE LA EDAD ">
   
 <label for="idiomaC"><b>IDIOMA*</b></label>
@@ -145,8 +159,14 @@
 [(ngModel)]="casoNuevoService.selecCaso.idiomaC" placeholder="INGRESE EL IDIOMA MATERNO">
 
 <label for="estadoCivilC"><b>ESTADO CIVIL*</b></label>
-<input  class="form-control" id="estadoCivilC"  name="estadoCivilC" #estadoCivilC ="ngModel" 
-[(ngModel)]="casoNuevoService.selecCaso.estadoCivilC" placeholder="INGRESE EL ESTADO CIVIL">
+<select class="form-control" id="estadoCivilC"  name="estadoCivilC" #estadoCivilC ="ngModel" 
+[(ngModel)]="casoNuevoService.selecCaso.estadoCivilC">
+  <option>SOLTER@</option>
+  <option>CASAD@</option>
+  <option>DIVORCIOAD@</option>
+  <option>SEPARAD@</option>
+  <option>VIUD@</option>
+</select>
 
 <label for="telefonoC"><b>TELÉFONO DE CASA/OFICINA*</b></label>
 <input type="tel" pattern="[0-9]{9}"  class="form-control" id="telefonoC"  name="telefonoC" #telefonoC ="ngModel" 
@@ -205,9 +225,13 @@
 <input  class="form-control" id="diagnostico"  name="diagnostico" #diagnostico ="ngModel" 
 [(ngModel)]="casoNuevoService.selecCaso.diagnostico" placeholder="INGRESE UN DIAGNOSTICO  DEL CASO">
 
-<label for="exampleInputFile"><b>Subir archivo*</b></label>
-    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-    <small id="fileHelp" class="form-text text-muted">AGREGAR PRUEBAS DEL CASO </small>
+
+    <label for="exampleInputFile"><b>PRUEBAS DEL CASO *</b></label>
+      <input type="file" accept=".png, .jpg" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp" (change)="onUpload($event)">
+      <small id="fileHelp" class="form-text text-muted">AGREGAR PRUEBAS DEL CASO </small>
+  
+    
+  
   
 
 <label for="acciones"><b>ACCIONES*</b></label>
@@ -255,7 +279,5 @@
   </div>
 
 </form>
-
-
 
 
