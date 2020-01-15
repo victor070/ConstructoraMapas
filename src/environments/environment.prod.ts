@@ -1,13 +1,13 @@
 export const environment = {
   production: true,
   firebaseConfig : {
-    apiKey: "AIzaSyDnpdNTR3ATjcwAIs4UpW5bSt_ayLROKtg",
-  authDomain: "digdexela-7a9b4.firebaseapp.com",
-  databaseURL: "https://digdexela-7a9b4.firebaseio.com",
-  projectId: "digdexela-7a9b4",
-  storageBucket: "digdexela-7a9b4.appspot.com",
-  messagingSenderId: "158996527454",
-  appId: "1:158996527454:web:933541ccb1c6d6da3e77cf",
-  measurementId: "G-HC9WD778PS"
+    apiKey: "AIzaSyD1JI4wFfM0uVQJHbf3Mu4HZqQvIQx7Hyc",
+    authDomain: "mapas-16480.firebaseapp.com",
+    databaseURL: "https://mapas-16480.firebaseio.com",
+    projectId: "mapas-16480",
+    storageBucket: "mapas-16480.appspot.com",
+    messagingSenderId: "166536946086",
+    appId: "1:166536946086:web:8dea88f9a377c4a6622f67",
+    measurementId: "G-FXKPHC0617"
   }
 };
