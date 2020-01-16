@@ -16,8 +16,6 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { MaterialModule } from './materialModule';
 
-import { BuscarComponent } from './componentes/buscar/buscar.component';
-import { CasoNuevoComponent } from './componentes/caso-nuevo/caso-nuevo.component';
 import { MapaComponent } from './componentes/mapa/mapa.component';
 import { LlamadaComponent } from './componentes/llamada/llamada.component';
 
@@ -27,8 +25,6 @@ import { LlamadaComponent } from './componentes/llamada/llamada.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    BuscarComponent,
-    CasoNuevoComponent,
     MapaComponent,
     LlamadaComponent
     

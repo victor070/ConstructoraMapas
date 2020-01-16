@@ -1,7 +1,9 @@
-    
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+        
     <form #mapaform="ngForm">
       <div>
-    <h3>BOTÓN DE PÁNICO</h3>
+    <h3>REGISTRO DE DATOS</h3>
 
     <input type="hidden" name="$keyRegistroMapa" #$keyRegistroMapa="ngModel" 
     [(ngModel)]="mapaService.selecMapa.$keyRegistroMapa">
@@ -11,7 +13,7 @@
     [(ngModel)]="mapaService.selecMapa.nombreM" placeholder="INGRESE LOS NOMBRES">
 
     
-    <label for="direc"><b>DIRECCIÓN</b></label>
+    <label for="direc"><b>COORDENADAS</b></label>
     <input type="text" class="form-control" id="direc"  name="direc" #direc ="ngModel" 
     [(ngModel)]="mapaService.selecMapa.direc" placeholder="INGRESE LA DIRECCION">
 
@@ -22,24 +24,34 @@
       <div class="text-center">
           <div class="btn-group btn-group-sm text-center">
               <button class="btn btn-outline-primary form-control" type="submit" (click)="panico(mapaform)">
-                <i class="fas fa-plus-circle"></i>   PÁNICO!
+                <i class="fas fa-plus-circle"></i> GUARDAR
               </button>
           </div>
         </div>
 
       </form>
-  
-<br>
-<div class="conteiner">
+      
+  </mat-drawer>
+
+
+  <div class="conteiner">
    
 
-  <agm-map 
-[latitude]="latitude" 
-[longitude]="longitude" 
-[zoom]="zoom" >
-  <agm-marker 
+    <agm-map 
   [latitude]="latitude" 
-  [longitude]="longitude"></agm-marker>
-</agm-map>
-</div>
+  [longitude]="longitude" 
+  [zoom]="zoom" >
+    <agm-marker 
+    [latitude]="latitude" 
+    [longitude]="longitude"></agm-marker>
+  </agm-map>
+  </div>
 
+  <br>
+  <div class="example-sidenav-content">
+    <button type="button" mat-button (click)="drawer.toggle()">
+      <i> REGISTRAR </i>
+    </button>
+  </div>
+
+</mat-drawer-container>

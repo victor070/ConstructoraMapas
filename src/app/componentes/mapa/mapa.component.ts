@@ -49,7 +49,7 @@ panico(mapaform: NgForm){
     Swal.fire({
       position:'top-end',
       type:"success",
-      title:'la ayuda va en Camino!',
+      title:'DATOS GUARDADOS',
       showConfirmButton: false,
       timer: 2500
     })
@@ -71,3 +71,6 @@ panico(mapaform: NgForm){
   
 }
 
+export class SidenavAutosizeExample {
+  showFiller = false;
+}
