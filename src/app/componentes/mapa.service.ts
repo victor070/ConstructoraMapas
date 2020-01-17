@@ -20,8 +20,15 @@ export class MapaService {
 
   nuevoMapa(mapa: Mapa){
     this.MapaList.push({
-    nombre: mapa.nombreM,
-    direc: mapa.direc
+    nombre: mapa.nombreLugar,
+    direc: mapa.coordenadas,
+    tipoterreno: mapa.tipoterreno,
+    luz: mapa.luz,
+    agua:mapa.agua,
+    drenage: mapa.drenage,
+    estadoDeRegistro: mapa.estadoDeRegistro,
+    
+
      });
   
   }

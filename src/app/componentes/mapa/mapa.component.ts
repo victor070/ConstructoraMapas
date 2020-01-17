@@ -39,7 +39,7 @@ export class MapaComponent implements OnInit {
 
 
 panico(mapaform: NgForm){
-  console.log("se envia la ayuda");
+  console.log("LOS DATOS SE GUARDARON CORRECTAMENTE");
   
   this.mapaService.getMapa();
 

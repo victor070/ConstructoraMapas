@@ -7,18 +7,42 @@
 
     <input type="hidden" name="$keyRegistroMapa" #$keyRegistroMapa="ngModel" 
     [(ngModel)]="mapaService.selecMapa.$keyRegistroMapa">
+    <br>
     
      <label for="nombreM"><b>NOMBRE*</b></label>
-    <input type="text" class="form-control" id="nombreM"  name="nombreM" #nombreM ="ngModel" 
-    [(ngModel)]="mapaService.selecMapa.nombreM" placeholder="INGRESE LOS NOMBRES">
+    <input type="text" class="form-control" id="nombreLugar"  name="nombreLugar" #nombreLugar ="ngModel" 
+    [(ngModel)]="mapaService.selecMapa.nombreLugar" placeholder="INGRESE LOS NOMBRES">
 
-    
+    <br>
     <label for="direc"><b>COORDENADAS</b></label>
-    <input type="text" class="form-control" id="direc"  name="direc" #direc ="ngModel" 
-    [(ngModel)]="mapaService.selecMapa.direc" placeholder="INGRESE LA DIRECCION">
-
+    <input type="text" class="form-control" id="coordenadas"  name="coordenadas" #coordenadas ="ngModel" 
+    [(ngModel)]="mapaService.selecMapa.coordenadas" placeholder="INGRESE LA DIRECCION">
     <div>Dirección: {{latitude}}, {{longitude}}</div>
     
+    <br>
+    <label for="direc"><b>TIPO DE TERRENO </b></label>
+    <input type="text" class="form-control" id="tipoterreno"  name="tipoterreno" #tipoterreno ="ngModel" 
+    [(ngModel)]="mapaService.selecMapa.tipoterreno" placeholder="DESCRIBE EL TERRENO">
+
+     <br>
+    <label for="direc"><b> LUZ </b></label>
+    <input type="text" class="form-control" id="luz"  name="luz" #luz ="ngModel" 
+    [(ngModel)]="mapaService.selecMapa.luz" placeholder="TIENE LUZ">
+
+    <br>
+    <label for="direc"><b> AGUA </b></label>
+    <input type="text" class="form-control" id="agua"  name="agua" #agua="ngModel" 
+    [(ngModel)]="mapaService.selecMapa.agua" placeholder="TIENE AGUA">
+   
+    <br>
+    <label for="direc"><b> DRENAGE </b></label>
+    <input type="text" class="form-control" id="drenage"  name="drenage" #drenage ="ngModel" 
+    [(ngModel)]="mapaService.selecMapa.drenage" placeholder="TIENE DRENAGE">
+
+    <br>
+    <label for="direc"><b> ESTADO  </b></label>
+    <input type="text" class="form-control" id="estadoDeRegistro"  name="estadoDeRegistro" #estadoDeRegistro ="ngModel" 
+    [(ngModel)]="mapaService.selecMapa.estadoDeRegistro" placeholder="ESTADO">
 
       </div>
       <div class="text-center">

@@ -1,6 +1,12 @@
 export class Mapa {
 
     $keyRegistroMapa: string;
-    nombreM: string;
-    direc: string;
+    nombreLugar: string;
+    coordenadas: string;
+    tipoterreno: string;
+    luz: string;
+    agua:string;
+    drenage: string;
+    estadoDeRegistro: string;
+    
 }
